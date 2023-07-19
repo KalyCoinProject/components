@@ -10,7 +10,7 @@ import { Field } from 'src/state/pswap/actions';
 import { useSwapActionHandlers } from 'src/state/pswap/hooks';
 import { useTokenPriceData } from 'src/state/ptoken/hooks';
 import { formattedNum, toNiceDateYear } from 'src/utils/charts';
-import useUSDCPrice from 'src/utils/useUSDCPrice';
+import useUSDTPrice from 'src/utils/useUSDTPrice';
 import { unwrappedToken } from 'src/utils/wrappedCurrency';
 import { DurationBtns, SelectedCoinInfo, TrackIcons } from './styleds';
 
@@ -37,9 +37,9 @@ const CoinChart: React.FC<Props> = ({ coin, visibleTradeButton, tradeLinkUrl, re
         days: string;
       }),
   );
-  const tokenPrice = useUSDCPrice(coin);
+  const tokenPrice = useUSDTPrice(coin);
 
-  const usdcPrice = tokenUsdPrice || tokenPrice?.toSignificant(4);
+  const usdtPrice = tokenUsdPrice || tokenPrice?.toSignificant(4);
 
   const { onCurrencySelection } = useSwapActionHandlers(chainId);
   const onCurrencySelect = useCallback(
@@ -63,11 +63,11 @@ const CoinChart: React.FC<Props> = ({ coin, visibleTradeButton, tradeLinkUrl, re
 
   const priceChart = coinGekoData.length > 0 ? [...coinGekoData] : [...kalyswapData];
   // add current price in chart
-  if (priceChart.length > 0 && usdcPrice) {
+  if (priceChart.length > 0 && usdtPrice) {
     const timestampnow = Math.floor(Date.now() / 1000);
 
     priceChart.push({
-      priceUSD: parseFloat(usdcPrice),
+      priceUSD: parseFloat(usdtPrice),
       timestamp: `${timestampnow}`,
     });
   }
@@ -80,7 +80,7 @@ const CoinChart: React.FC<Props> = ({ coin, visibleTradeButton, tradeLinkUrl, re
             {token.symbol}
           </Text>
           <Text color="green1" fontSize="16px">
-            ${usdcPrice ? usdcPrice : '-'}
+            ${usdtPrice ? usdtPrice : '-'}
           </Text>
         </Box>
         <TrackIcons>

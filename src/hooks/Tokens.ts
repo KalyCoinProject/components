@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings';
-import { KLC, CHAINS, ChainId, Currency, Token } from '@kalycoinproject/sdk';
+import { CHAINS, ChainId, Currency, KLC, Token } from '@kalycoinproject/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { COINGEKO_BASE_URL } from 'src/constants';
 import { useSelectedTokenList } from 'src/state/plists/hooks';

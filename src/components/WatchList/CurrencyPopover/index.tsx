@@ -1,4 +1,4 @@
-import { KLC, ChainId, Currency, Token, WKLC } from '@kalycoinproject/sdk';
+import { ChainId, Currency, KLC, Token, WKLC } from '@kalycoinproject/sdk';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';

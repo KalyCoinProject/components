@@ -2,12 +2,12 @@
 import { parseUnits } from '@ethersproject/units';
 import { Order, useGelatoLimitOrdersHistory, useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
 import {
-  KLC,
   ChainId,
   Currency,
   CurrencyAmount,
   FACTORY_ADDRESS,
   JSBI,
+  KLC,
   Price,
   Token,
   TokenAmount,

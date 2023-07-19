@@ -1,6 +1,6 @@
-import { KLC, ChainId, CurrencyAmount, JSBI } from '@kalycoinproject/sdk';
+import { ChainId, CurrencyAmount, JSBI, KLC } from '@kalycoinproject/sdk';
 import { Currency, CurrencyAmount as UniCurrencyAmount } from '@uniswap/sdk-core';
-import { MIN_KLC } from '../constants';
+import { MIN_ETH } from '../constants';
 
 /**
  * Given some token amount, return the max that can be spent of it
@@ -9,8 +9,8 @@ import { MIN_KLC } from '../constants';
 export function maxAmountSpend(chainId: ChainId, currencyAmount?: CurrencyAmount): CurrencyAmount | undefined {
   if (!currencyAmount) return undefined;
   if (chainId && currencyAmount.currency === KLC[chainId]) {
-    if (JSBI.greaterThan(currencyAmount.raw, MIN_KLC)) {
-      return CurrencyAmount.ether(JSBI.subtract(currencyAmount.raw, MIN_KLC), chainId);
+    if (JSBI.greaterThan(currencyAmount.raw, MIN_ETH)) {
+      return CurrencyAmount.ether(JSBI.subtract(currencyAmount.raw, MIN_ETH), chainId);
     } else {
       return CurrencyAmount.ether(JSBI.BigInt(0), chainId);
     }
@@ -21,8 +21,8 @@ export function maxAmountSpend(chainId: ChainId, currencyAmount?: CurrencyAmount
 export function galetoMaxAmountSpend(chainId: ChainId, currencyAmount?: UniCurrencyAmount<Currency>): any | undefined {
   if (!currencyAmount) return undefined;
   if (chainId && currencyAmount.currency === KLC[chainId]) {
-    if (JSBI.greaterThan(currencyAmount.numerator, MIN_KLC)) {
-      return CurrencyAmount.ether(JSBI.subtract(currencyAmount.numerator, MIN_KLC), chainId);
+    if (JSBI.greaterThan(currencyAmount.numerator, MIN_ETH)) {
+      return CurrencyAmount.ether(JSBI.subtract(currencyAmount.numerator, MIN_ETH), chainId);
     } else {
       return CurrencyAmount.ether(JSBI.BigInt(0), chainId);
     }

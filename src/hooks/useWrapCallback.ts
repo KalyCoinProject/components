@@ -1,4 +1,4 @@
-import { KLC, Currency, WKLC, currencyEquals } from '@kalycoinproject/sdk';
+import { Currency, KLC, WKLC, currencyEquals } from '@kalycoinproject/sdk';
 import { useMemo } from 'react';
 import { tryParseAmount } from '../state/pswap/hooks';
 import { useTransactionAdder } from '../state/ptransactions/hooks';

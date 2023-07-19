@@ -68,7 +68,7 @@ export const USDT: { [chainId in ChainId]: Token } = {
   [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'USDT', 'Tether USD'),
   [ChainId.KALYCHAIN]: new Token(
     ChainId.KALYCHAIN,
-    '0xde3A24028580884448a5397872046a019649b084',
+    '0xe6828eF9923943899199dc4464B791499025d5aC',
     6,
     'USDT',
     'Tether USD',
@@ -77,72 +77,6 @@ export const USDT: { [chainId in ChainId]: Token } = {
   [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
 };
 
-export const USDTe: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'USDT.e', 'Tether USD'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
-    6,
-    'USDT.e',
-    'Tether USD',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 6, 'USDT.e', 'Tether USD'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
-};
-
-export const UST: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'UST', 'Wormhole UST'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0xb599c3590F42f8F995ECfa0f85D2980B76862fc1',
-    6,
-    'UST',
-    'Wormhole UST',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 6, 'UST', 'Wormhole UST'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
-};
-
-export const axlUST: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'axlUST', 'Axelar Wrapped UST'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11',
-    6,
-    'axlUST',
-    'Axelar Wrapped UST',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 18, 'axlUST', 'Axelar Wrapped UST'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 18, '', ''),
-};
-
-export const USDC: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'USDC', 'USD Coin'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
-    6,
-    'USDC',
-    'USD Coin',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 6, 'USDC', 'USD Coin'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
-};
-
-export const USDCe: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'USDC.e', 'USD Coin'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
-    6,
-    'USDC.e',
-    'USD Coin',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 6, 'USDC.e', 'USD Coin'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
-};
-
-// these tokens can be directly linked to (via url params) in the swap page without prompting a warning
 export const TRUSTED_TOKEN_ADDRESSES: { readonly [chainId in ChainId]: string[] } = {
   [ChainId.TESTNET]: [],
   [ChainId.KALYCHAIN]: [WKLC[ChainId.KALYCHAIN].address, KSWAP[ChainId.KALYCHAIN].address],
@@ -153,7 +87,7 @@ export const TRUSTED_TOKEN_ADDRESSES: { readonly [chainId in ChainId]: string[] 
 export const SWAP_DEFAULT_CURRENCY = {
   [ChainId.KALYCHAIN]: {
     inputCurrency: 'KLC',
-    outputCurrency: USDC[ChainId.KALYCHAIN].address,
+    outputCurrency: USDT[ChainId.KALYCHAIN].address,
   },
   [ChainId.TESTNET]: {
     inputCurrency: '',
@@ -169,32 +103,10 @@ export const SWAP_DEFAULT_CURRENCY = {
   },
 };
 
-export const DAIe: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 18, 'DAI.e', 'Dai Stablecoin'),
-  [ChainId.KALYCHAIN]: new Token(
-    ChainId.KALYCHAIN,
-    '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
-    18,
-    'DAI.e',
-    'Dai Stablecoin',
-  ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 18, 'DAI.e', 'Dai Stablecoin'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 18, '', ''),
-};
-
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.TESTNET]: [WKLC[ChainId.TESTNET], KSWAP[ChainId.TESTNET]],
-  [ChainId.KALYCHAIN]: [
-    WKLC[ChainId.KALYCHAIN],
-    KSWAP[ChainId.KALYCHAIN],
-    USDTe[ChainId.KALYCHAIN],
-    DAIe[ChainId.KALYCHAIN],
-    USDCe[ChainId.KALYCHAIN],
-    UST[ChainId.KALYCHAIN],
-    axlUST[ChainId.KALYCHAIN],
-    USDC[ChainId.KALYCHAIN],
-  ],
+  [ChainId.KALYCHAIN]: [WKLC[ChainId.KALYCHAIN], KSWAP[ChainId.KALYCHAIN], USDT[ChainId.KALYCHAIN]],
   [ChainId.WAGMI]: [WKLC[ChainId.WAGMI], KSWAP[ChainId.WAGMI]],
   [ChainId.COSTON]: [WKLC[ChainId.COSTON], KSWAP[ChainId.COSTON]],
 };
@@ -212,8 +124,8 @@ export const PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN: Percent = new Percent(JSBI.Bi
 // for non expert mode disable swaps above this
 export const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent = new Percent(JSBI.BigInt(1500), BIPS_BASE); // 15%
 
-// used to ensure the user doesn't send so much KLC so they end up with <.01
-export const MIN_KLC: JSBI = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(16)); // .01 KLC
+// used to ensure the user doesn't send so much ETH so they end up with <.01
+export const MIN_ETH: JSBI = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(16)); // .01 KLC
 
 export const KALYSWAP_TOKENS_REPO_RAW_BASE_URL = `https://raw.githubusercontent.com/kalycoinproject/tokens`;
 
@@ -259,7 +171,7 @@ export const TIMEFRAME = [
   },
 ];
 
-export const SUBGRAPH_BASE_URL = `https://api.thegraph.com/subgraphs/name/kalyswap`;
+export const SUBGRAPH_BASE_URL = `https://api.kalygraph.com/subgraphs/name/kalyswap`;
 
 export const LANDING_PAGE = 'https://kalyswap.io';
 
@@ -324,7 +236,7 @@ export const EVM_SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
 };
 
 export const KALYCHAIN_CHAIN_PARAMS = {
-  chainId: '0xa86a', // A 0x-prefixed hexadecimal chainId
+  chainId: '0x0f30', // A 0x-prefixed hexadecimal chainId
   chainName: 'KALYCHAIN Mainnet',
   nativeCurrency: {
     name: 'KALYCHAIN',

@@ -1,7 +1,7 @@
-import { KLC, ChainId, Currency, Token } from '@kalycoinproject/sdk';
+import { ChainId, Currency, KLC, Token } from '@kalycoinproject/sdk';
 import deepEqual from 'deep-equal';
 import React, { useMemo } from 'react';
-import { KlcLogo, CflrLogo, WgmLogo } from 'src/components/Icons';
+import { CflrLogo, KlcLogo, WgmLogo } from 'src/components/Icons';
 import { LogoSize } from 'src/constants';
 import { getTokenLogoURL } from 'src/utils/getTokenLogoURL';
 import { StyledLogo } from './styles';
@@ -18,11 +18,7 @@ export default function CurrencyLogo({
   imageSize?: LogoSize;
 }) {
   const srcs: string[] = useMemo(() => {
-    if (
-      currency === KLC[ChainId.KALYCHAIN] ||
-      currency === KLC[ChainId.WAGMI] ||
-      currency === KLC[ChainId.COSTON]
-    )
+    if (currency === KLC[ChainId.KALYCHAIN] || currency === KLC[ChainId.WAGMI] || currency === KLC[ChainId.COSTON])
       return [];
     if (currency instanceof Token || !!(currency as Token).address) {
       const primarySrc = getTokenLogoURL((currency as Token)?.address, imageSize);

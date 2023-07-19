@@ -1,4 +1,4 @@
-import { KLC, ChainId, Currency, Token, currencyEquals } from '@kalycoinproject/sdk';
+import { ChainId, Currency, KLC, Token, currencyEquals } from '@kalycoinproject/sdk';
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';

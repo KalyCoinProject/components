@@ -7,7 +7,7 @@ import Drawer from 'src/components/Drawer';
 import { useChainId } from 'src/hooks';
 import { getEtherscanLink, isAddress, shortenAddress } from 'src/utils';
 import { computeFiatValuePriceImpact } from 'src/utils/computeFiatValuePriceImpact';
-import useUSDCPrice from 'src/utils/useUSDCPrice';
+import useUSDTPrice from 'src/utils/useUSDTPrice';
 import { Box, Button, CurrencyLogo, Loader, Text } from '../../';
 import LimitOrderDetailInfo from '../LimitOrderDetailInfo';
 import { FiatValue } from './FiateValue';
@@ -127,8 +127,8 @@ const ConfirmLimitOrderDrawer: React.FC<Props> = (props) => {
 
   const inputCurrency = getInputCurrency();
   const outputCurrency = getOutputCurrency();
-  const fiatValueInput = useUSDCPrice(inputCurrency);
-  const fiatValueOutput = useUSDCPrice(outputCurrency);
+  const fiatValueInput = useUSDTPrice(inputCurrency);
+  const fiatValueOutput = useUSDTPrice(outputCurrency);
 
   if (!inputAmount || !outputAmount) return null;
 
@@ -257,7 +257,7 @@ const ConfirmLimitOrderDrawer: React.FC<Props> = (props) => {
             href={getEtherscanLink(chainId, txHash, 'transaction')}
             target="_blank"
           >
-            View on the Snowtrace Explorer
+            View on the KalyScan Explorer
           </Link>
         )}
       </Box>

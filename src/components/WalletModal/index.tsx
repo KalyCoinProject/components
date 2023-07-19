@@ -11,7 +11,7 @@ import RabbyIcon from 'src/assets/images/rabby.svg';
 import XDefiIcon from 'src/assets/images/xDefi.png';
 import { Button } from 'src/components/Button';
 import { gnosisSafe, injected, xDefi } from 'src/connectors';
-import { KALYCHAIN_CHAIN_PARAMS, EVM_SUPPORTED_WALLETS, IS_IN_IFRAME, LANDING_PAGE, WalletInfo } from 'src/constants';
+import { EVM_SUPPORTED_WALLETS, IS_IN_IFRAME, KALYCHAIN_CHAIN_PARAMS, LANDING_PAGE, WalletInfo } from 'src/constants';
 import { ExternalLink } from 'src/theme';
 import { Box, Modal, ToggleButtons } from '../../';
 import Option from './Option';

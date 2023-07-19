@@ -1,4 +1,4 @@
-import { KLC, ChainId } from '@kalycoinproject/sdk';
+import { ChainId, KLC } from '@kalycoinproject/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import CurrencyLogo from '.';

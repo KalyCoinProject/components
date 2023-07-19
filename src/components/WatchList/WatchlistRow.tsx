@@ -11,7 +11,7 @@ import { useCoinGeckoTokenPrice, useCoinGeckoTokenPriceChart } from 'src/hooks/T
 import { AppDispatch } from 'src/state';
 import { useTokenWeeklyChartData } from 'src/state/ptoken/hooks';
 import { removeCurrency } from 'src/state/pwatchlists/actions';
-import useUSDCPrice from 'src/utils/useUSDCPrice';
+import useUSDTPrice from 'src/utils/useUSDTPrice';
 import { unwrappedToken } from 'src/utils/wrappedCurrency';
 import { DeleteButton, RowWrapper } from './styleds';
 
@@ -28,9 +28,9 @@ const WatchlistRow: React.FC<Props> = ({ coin, onClick, onRemove, isSelected }) 
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const theme = useContext(ThemeContext);
   const { tokenUsdPrice } = useCoinGeckoTokenPrice(coin);
-  const tokenPrice = useUSDCPrice(coin);
+  const tokenPrice = useUSDTPrice(coin);
 
-  const usdcPrice = tokenUsdPrice || tokenPrice?.toSignificant(4);
+  const usdtPrice = tokenUsdPrice || tokenPrice?.toSignificant(4);
 
   const coinGekoData = useCoinGeckoTokenPriceChart(coin) || [];
   const kalyswapData = useTokenWeeklyChartData(coin?.address?.toLowerCase());
@@ -53,13 +53,13 @@ const WatchlistRow: React.FC<Props> = ({ coin, onClick, onRemove, isSelected }) 
   };
 
   useEffect(() => {
-    if (usdcPrice) {
+    if (usdtPrice) {
       setTimeout(() => {
         // show chart only after price of token comes to display chart in visible space
         setShowChart(true);
       });
     }
-  }, [usdcPrice, setShowChart]);
+  }, [usdtPrice, setShowChart]);
 
   return (
     <RowWrapper
@@ -103,7 +103,7 @@ const WatchlistRow: React.FC<Props> = ({ coin, onClick, onRemove, isSelected }) 
         )}
         <Box display="flex" flexDirection="column" justifyContent="center" height="100%" onClick={onClick}>
           <Text color="text1" fontSize={14} fontWeight={500}>
-            {usdcPrice ? `$${usdcPrice}` : '-'}
+            {usdtPrice ? `$${usdtPrice}` : '-'}
           </Text>
           {!isNaN(perc) && (
             <Text color={diffPercent > 0 ? 'green1' : 'red1'} fontSize={'8px'} fontWeight={500}>

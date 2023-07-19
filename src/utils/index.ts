@@ -4,7 +4,7 @@ import { AddressZero } from '@ethersproject/constants';
 import { Contract } from '@ethersproject/contracts';
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers';
 import IKalyswapRouter from '@kalycoinproject/exchange-contracts/artifacts/contracts/kalyswap-periphery/interfaces/IKalyswapRouter.sol/IKalyswapRouter.json';
-import { KLC, CHAINS, ChainId, Currency, JSBI, Percent, Token, Trade, currencyEquals } from '@kalycoinproject/sdk';
+import { CHAINS, ChainId, Currency, JSBI, KLC, Percent, Token, Trade, currencyEquals } from '@kalycoinproject/sdk';
 import { ROUTER_ADDRESS } from '../constants';
 import { TokenAddressMap } from '../state/plists/hooks';
 

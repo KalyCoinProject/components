@@ -1,5 +1,6 @@
 // the Kalyswap Default token list lives here
-export const KALYSWAP_LIST = 'https://raw.githubusercontent.com/kalycoinproject/tokenlists/main/kalyswap.tokenlist.json';
+export const KALYSWAP_LIST =
+  'https://raw.githubusercontent.com/kalycoinproject/tokenlists/main/kalyswap.tokenlist.json';
 
 export const DEFAULT_TOKEN_LISTS_SELECTED: string[] = [KALYSWAP_LIST];
 

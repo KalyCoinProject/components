@@ -8,7 +8,13 @@ export default {
   title: 'Components/DoubleCurrencyLogo',
 };
 
-const currency0 = new Token(ChainId.KALYCHAIN, '0xf20d962a6c8f70c731bd838a3a388D7d48fA6e15', 18, 'WETH', 'Ether');
+const currency0 = new Token(
+  ChainId.KALYCHAIN,
+  '0x89aE5C335372bF4d06ece4cEE1e92D04c3fdf1e0',
+  18,
+  'ETH',
+  'Ethereum Token',
+);
 const currency1 = new Token(
   ChainId.KALYCHAIN,
   CHAINS[ChainId.KALYCHAIN].contracts!.kswap,

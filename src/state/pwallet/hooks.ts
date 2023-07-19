@@ -1,4 +1,4 @@
-import { KLC, ChainId, Currency, CurrencyAmount, JSBI, Token, TokenAmount } from '@kalycoinproject/sdk';
+import { ChainId, Currency, CurrencyAmount, JSBI, KLC, Token, TokenAmount } from '@kalycoinproject/sdk';
 import { useMemo } from 'react';
 import ERC20_INTERFACE from 'src/constants/abis/erc20';
 import { useKalyswapWeb3 } from 'src/hooks';

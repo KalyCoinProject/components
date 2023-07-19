@@ -11,7 +11,7 @@ import {
   useGelatoLimitOrderList,
   useSwapActionHandlers,
 } from 'src/state/pswap/hooks';
-import useUSDCPrice from 'src/utils/useUSDCPrice';
+import useUSDTPrice from 'src/utils/useUSDTPrice';
 import { wrappedCurrency } from 'src/utils/wrappedCurrency';
 import { KalyswapWeb3Provider } from './hooks';
 import { KALYSWAP_PERSISTED_KEYS, kalyswapReducers } from './state';
@@ -71,7 +71,7 @@ export {
   useGelatoLimitOrderList,
   SelectTokenDrawer,
   useDerivedSwapInfo,
-  useUSDCPrice,
+  useUSDTPrice,
   useAllTokens,
   usePair,
   useSwapActionHandlers,

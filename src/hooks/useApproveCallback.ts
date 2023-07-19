@@ -1,7 +1,7 @@
 import { MaxUint256 } from '@ethersproject/constants';
 import { TransactionResponse } from '@ethersproject/providers';
 import { useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
-import { KLC, ChainId, CurrencyAmount, TokenAmount, Trade } from '@kalycoinproject/sdk';
+import { ChainId, CurrencyAmount, KLC, TokenAmount, Trade } from '@kalycoinproject/sdk';
 import { useCallback, useMemo } from 'react';
 import { ROUTER_ADDRESS } from 'src/constants';
 import { useTokenAllowance } from 'src/data/Allowances';

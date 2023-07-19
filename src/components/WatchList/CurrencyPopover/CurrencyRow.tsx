@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { Box, Button, CurrencyLogo, Text } from 'src/components';
 import { useChainId } from 'src/hooks';
 import { useIsSelectedCurrency } from 'src/state/pwatchlists/hooks';
-import useUSDCPrice from 'src/utils/useUSDCPrice';
+import useUSDTPrice from 'src/utils/useUSDTPrice';
 import { unwrappedToken } from 'src/utils/wrappedCurrency';
 import { RowWrapper } from './styled';
 
@@ -14,7 +14,7 @@ type Props = {
 };
 
 const WatchlistCurrencyRow: React.FC<Props> = ({ currency, onSelect, style }) => {
-  const usdcPrice = useUSDCPrice(currency);
+  const usdtPrice = useUSDTPrice(currency);
   const isSelected = useIsSelectedCurrency(currency?.address);
 
   const chainId = useChainId();
@@ -36,7 +36,7 @@ const WatchlistCurrencyRow: React.FC<Props> = ({ currency, onSelect, style }) =>
 
       <Box ml={'10px'} textAlign="right">
         <Text color="text1" fontSize={16} fontWeight={500}>
-          ${usdcPrice ? usdcPrice?.toSignificant(4, { groupSeparator: ',' }) : '-'}
+          ${usdtPrice ? usdtPrice?.toSignificant(4, { groupSeparator: ',' }) : '-'}
         </Text>
       </Box>
       <Box ml={'10px'} textAlign="right">

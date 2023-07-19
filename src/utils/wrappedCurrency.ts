@@ -1,4 +1,4 @@
-import { KLC, ChainId, Currency, Token, WKLC } from '@kalycoinproject/sdk';
+import { ChainId, Currency, KLC, Token, WKLC } from '@kalycoinproject/sdk';
 import { NativeCurrency as UniCurrency, Token as UniToken } from '@uniswap/sdk-core';
 
 export function wrappedCurrency(currency: Currency | undefined, chainId: ChainId | undefined): Token | undefined {

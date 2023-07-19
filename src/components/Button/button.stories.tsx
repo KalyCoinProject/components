@@ -45,5 +45,5 @@ export const LinkButton = TemplateButton.bind({});
 LinkButton.args = {
   variant: 'primary',
   as: 'a',
-  href: 'https://kalyswap.exchange/',
+  href: 'https://kalyswap.io/',
 };
