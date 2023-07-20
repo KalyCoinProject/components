@@ -18,7 +18,7 @@ export default function CurrencyLogo({
   imageSize?: LogoSize;
 }) {
   const srcs: string[] = useMemo(() => {
-    if (currency === KLC[ChainId.KALYCHAIN] || currency === KLC[ChainId.WAGMI] || currency === KLC[ChainId.COSTON])
+    if (currency === KLC[ChainId.KALYCHAIN])
       return [];
     if (currency instanceof Token || !!(currency as Token).address) {
       const primarySrc = getTokenLogoURL((currency as Token)?.address, imageSize);
@@ -31,10 +31,6 @@ export default function CurrencyLogo({
 
   if (deepEqual(currency, KLC[ChainId.KALYCHAIN])) {
     return <KlcLogo size={`${size}px`} />;
-  } else if (deepEqual(currency, KLC[ChainId.WAGMI])) {
-    return <WgmLogo size={`${size}px`} />;
-  } else if (deepEqual(currency, KLC[ChainId.COSTON])) {
-    return <CflrLogo size={`${size}px`} />;
   }
 
   return <StyledLogo size={`${size}px`} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />;

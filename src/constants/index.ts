@@ -6,8 +6,6 @@ import { gnosisSafe, injected, walletconnect, walletlink, xDefi } from '../conne
 export const ROUTER_ADDRESS: { [chainId in ChainId]: string } = {
   [ChainId.TESTNET]: CHAINS[ChainId.TESTNET].contracts!.router,
   [ChainId.KALYCHAIN]: CHAINS[ChainId.KALYCHAIN].contracts!.router,
-  [ChainId.WAGMI]: CHAINS[ChainId.WAGMI].contracts!.router,
-  [ChainId.COSTON]: CHAINS[ChainId.COSTON].contracts!.router,
 };
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -48,20 +46,6 @@ export const KSWAP: { [chainId in ChainId]: Token } = {
     CHAINS[ChainId.KALYCHAIN].kswap_symbol!,
     'Kalyswap',
   ),
-  [ChainId.WAGMI]: new Token(
-    ChainId.WAGMI,
-    CHAINS[ChainId.WAGMI].contracts!.kswap,
-    18,
-    CHAINS[ChainId.WAGMI].kswap_symbol!,
-    'Wagmi Kalyswap',
-  ),
-  [ChainId.COSTON]: new Token(
-    ChainId.COSTON,
-    CHAINS[ChainId.COSTON].contracts!.kswap,
-    18,
-    CHAINS[ChainId.COSTON].kswap_symbol!,
-    'Coston Kalyswap',
-  ),
 };
 
 export const USDT: { [chainId in ChainId]: Token } = {
@@ -73,15 +57,11 @@ export const USDT: { [chainId in ChainId]: Token } = {
     'USDT',
     'Tether USD',
   ),
-  [ChainId.WAGMI]: new Token(ChainId.WAGMI, ZERO_ADDRESS, 6, 'USDT', 'Tether USD'),
-  [ChainId.COSTON]: new Token(ChainId.COSTON, ZERO_ADDRESS, 6, '', ''),
 };
 
 export const TRUSTED_TOKEN_ADDRESSES: { readonly [chainId in ChainId]: string[] } = {
   [ChainId.TESTNET]: [],
   [ChainId.KALYCHAIN]: [WKLC[ChainId.KALYCHAIN].address, KSWAP[ChainId.KALYCHAIN].address],
-  [ChainId.WAGMI]: [WKLC[ChainId.WAGMI].address, KSWAP[ChainId.WAGMI].address],
-  [ChainId.COSTON]: [WKLC[ChainId.COSTON].address, KSWAP[ChainId.COSTON].address],
 };
 
 export const SWAP_DEFAULT_CURRENCY = {
@@ -93,22 +73,12 @@ export const SWAP_DEFAULT_CURRENCY = {
     inputCurrency: '',
     outputCurrency: '',
   },
-  [ChainId.WAGMI]: {
-    inputCurrency: '',
-    outputCurrency: '',
-  },
-  [ChainId.COSTON]: {
-    inputCurrency: '',
-    outputCurrency: '',
-  },
 };
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.TESTNET]: [WKLC[ChainId.TESTNET], KSWAP[ChainId.TESTNET]],
   [ChainId.KALYCHAIN]: [WKLC[ChainId.KALYCHAIN], KSWAP[ChainId.KALYCHAIN], USDT[ChainId.KALYCHAIN]],
-  [ChainId.WAGMI]: [WKLC[ChainId.WAGMI], KSWAP[ChainId.WAGMI]],
-  [ChainId.COSTON]: [WKLC[ChainId.COSTON], KSWAP[ChainId.COSTON]],
 };
 
 // one basis point

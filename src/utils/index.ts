@@ -20,8 +20,6 @@ export function isAddress(value: any): string | false {
 const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   3889: CHAINS[ChainId.TESTNET].blockExplorerUrls![0],
   3888: CHAINS[ChainId.KALYCHAIN].blockExplorerUrls![0],
-  11111: CHAINS[ChainId.WAGMI].blockExplorerUrls![0],
-  16: CHAINS[ChainId.COSTON].blockExplorerUrls![0],
 };
 
 export function getEtherscanLink(

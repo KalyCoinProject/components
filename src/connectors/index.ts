@@ -26,16 +26,16 @@ export function getNetworkLibrary(): Web3Provider {
 }
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [3889, 3888, 11111, 16],
+  supportedChainIds: [3889, 3888],
 });
 
 export const gnosisSafe = new SafeAppConnector({
-  supportedChainIds: [3889, 3888, 11111, 16],
+  supportedChainIds: [3889, 3888],
 });
 
 export const walletlink = new WalletLinkConnector({
   url: NETWORK_URL,
-  supportedChainIds: [3889, 3888, 11111, 16],
+  supportedChainIds: [3889, 3888],
   appName: 'Kalyswap',
   appLogoUrl: 'https://raw.githubusercontent.com/kalycoinproject/interface/master/public/images/384x384_App_Icon.png',
 });
@@ -49,5 +49,5 @@ export const walletconnect = new WalletConnectConnector({
 });
 
 export const xDefi = new DefiConnector({
-  supportedChainIds: [1, 3888, 11111, 16],
+  supportedChainIds: [1, 3888],
 });
