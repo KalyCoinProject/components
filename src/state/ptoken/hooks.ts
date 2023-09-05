@@ -74,7 +74,7 @@ export function useTokenPriceData(tokenAddress: string, timeWindow: string, inte
     // Kalyswap Factory is created
     const startTime =
       type === 'ALL'
-        ? dayjs('2021-07-14').startOf('hour').unix()
+        ? dayjs('2023-08-29').startOf('hour').unix()
         : currentTime
             .subtract(1, timeWindow as dayjs.ManipulateType)
             .startOf('hour')

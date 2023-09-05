@@ -49,18 +49,29 @@ export const KSWAP: { [chainId in ChainId]: Token } = {
 };
 
 export const USDT: { [chainId in ChainId]: Token } = {
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, ZERO_ADDRESS, 6, 'USDT', 'Tether USD'),
+  [ChainId.TESTNET]: new Token(ChainId.TESTNET, '0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3', 18, 'USDT', 'Tether USD'),
   [ChainId.KALYCHAIN]: new Token(
     ChainId.KALYCHAIN,
-    '0xe6828eF9923943899199dc4464B791499025d5aC',
-    6,
+    '0x37540F0cC489088c01631138Da2E32cF406B83B8',
+    18,
     'USDT',
     'Tether USD',
   ),
 };
 
+export const USDTe: { [chainId in ChainId]: Token } = {
+  [ChainId.TESTNET]: new Token(ChainId.TESTNET, '0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3', 18, 'USDT.e', 'Tether USD'),
+  [ChainId.KALYCHAIN]: new Token(
+    ChainId.KALYCHAIN,
+    '0x37540F0cC489088c01631138Da2E32cF406B83B8',
+    18,
+    'USDT.e',
+    'Tether USD',
+  ),
+};
+
 export const TRUSTED_TOKEN_ADDRESSES: { readonly [chainId in ChainId]: string[] } = {
-  [ChainId.TESTNET]: [],
+  [ChainId.TESTNET]: [WKLC[ChainId.TESTNET].address, KSWAP[ChainId.TESTNET].address],
   [ChainId.KALYCHAIN]: [WKLC[ChainId.KALYCHAIN].address, KSWAP[ChainId.KALYCHAIN].address],
 };
 
@@ -70,8 +81,8 @@ export const SWAP_DEFAULT_CURRENCY = {
     outputCurrency: USDT[ChainId.KALYCHAIN].address,
   },
   [ChainId.TESTNET]: {
-    inputCurrency: '',
-    outputCurrency: '',
+    inputCurrency: 'KLC',
+    outputCurrency: USDT[ChainId.KALYCHAIN].address,,
   },
 };
 
@@ -229,7 +240,7 @@ export interface WalletInfo {
   mobile?: true;
   mobileOnly?: true;
 }
-export const DIRECTUS_URL_NEWS = `https://p7gm7mqi.directus.app/items/news?`;
+export const DIRECTUS_URL_NEWS = ``;
 
 export const COINGEKO_BASE_URL = `https://api.coingecko.com/api/v3/`;
 

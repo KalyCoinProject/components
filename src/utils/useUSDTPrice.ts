@@ -1,7 +1,7 @@
 // TODO: Actually calculate price
 import { ChainId, Currency, JSBI, Price, WKLC, currencyEquals } from '@kalycoinproject/sdk';
 import { useMemo } from 'react';
-import { USDT } from 'src/constants';
+import { USDTe } from 'src/constants';
 import { PairState, usePairs } from '../data/Reserves';
 import { useChainId } from '../hooks';
 import { wrappedCurrency } from './wrappedCurrency';
@@ -13,7 +13,7 @@ import { wrappedCurrency } from './wrappedCurrency';
 export default function useUSDTPrice(currency?: Currency): Price | undefined {
   const chainId = useChainId();
   const wrapped = wrappedCurrency(currency, chainId);
-  const USDT = USDT[chainId];
+  const USDT = USDTe[chainId];
   const tokenPairs: [Currency | undefined, Currency | undefined][] = useMemo(
     () => [
       [

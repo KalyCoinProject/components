@@ -10,7 +10,7 @@ export default {
 
 const currency0 = new Token(
   ChainId.KALYCHAIN,
-  '0x89aE5C335372bF4d06ece4cEE1e92D04c3fdf1e0',
+  '0xad89EA57DB2092b66641E732F51ADf483Ac18C21',
   18,
   'ETH',
   'Ethereum Token',
