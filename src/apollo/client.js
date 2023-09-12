@@ -13,7 +13,7 @@ export const client = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/dasconnor/kalychain-blocks',
+    uri: 'https://graph.kalychain.io/subgraphs/name/kalyswap/kalychain-blocks',
   }),
   cache: new InMemoryCache(),
 });

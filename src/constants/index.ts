@@ -152,7 +152,7 @@ export const TIMEFRAME = [
   },
 ];
 
-export const SUBGRAPH_BASE_URL = `https://api.kalygraph.com/subgraphs/name/kalyswap`;
+export const SUBGRAPH_BASE_URL = `https://graph.kalychain.io/subgraphs/name/kalyswap`;
 
 export const LANDING_PAGE = 'https://kalyswap.io';
 

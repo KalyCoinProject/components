@@ -1,6 +1,6 @@
 {
   "name": "@kalycoinproject/components",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "engines": {
@@ -39,7 +39,7 @@
     "@ethersproject/experimental": "^5.5.0",
     "@gelatonetwork/limit-orders-react": "^2.3.1",
     "@gnosis.pm/safe-apps-web3-react": "^0.6.7",
-    "@kalycoinproject/sdk": "2.2.1",
+    "@kalycoinproject/sdk": "2.2.2",
     "@kalycoinproject/token-lists": "^1.0.1",
     "@kalycoinproject/web3-react-injected-connector": "^1.0.3",
     "@reduxjs/toolkit": "^1.7.2",
@@ -132,7 +132,7 @@
   },
   "peerDependencies": {
     "@gelatonetwork/limit-orders-react": "^2.3.1",
-    "@kalycoinproject/sdk": "^2.2.1",
+    "@kalycoinproject/sdk": "^2.2.2",
     "@reduxjs/toolkit": "^1.7.2",
     "react": ">=17.0.1",
     "react-dom": ">=17.0.1",
